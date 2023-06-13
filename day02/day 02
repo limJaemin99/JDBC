@@ -1,0 +1,28 @@
+<Day 02>
+
+# _1_StudentInsertMenuThrows
+● 메소드를 만들어 day 01 의 StudentInsertMenu 만들기
+
+# _2_1_StudentUpdateMenu
+● 메소드를 만들어 UPDATE 기능 만들기 (NAME, AGE, ADDRESS)
+
+# _2_2_StudentUpdateMenu_Tc
+● 선생님 버전 - 메소드를 만들어 UPDATE 기능 만들기 (AGE, ADDRESS)
+
+# _3_StudentDeleteMenu
+● 메소드를 만들어 DELETE 기능 만들기
+
+# OracleUtility
+● Connection [연결] , [종료] 메소드 생성한 클래스
+
+# _4_1_StudentSelectOneMenu
+● SELECT 출력문
+
+# _4_2_StudentSelectOneMenu_Complete
+● getXXXX("컬럼명") 을 사용하여 출력하는 방식
+
+# _5_1_StudentSelectAllMenu
+● 모든 학생 조회하는 StudentSelectAllMenu 클래스 : 1줄에 1개행을 출력하세요.
+
+# _5_2_ScoreSelectWithSubject
+● 과목명을 입력하면 해당 과목 조회하는 ScoreSelectWithSubject 클래스
