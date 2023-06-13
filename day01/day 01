@@ -1,0 +1,19 @@
+<Day 01>
+
+# InsertDMLTest
+● INSERT 연습
+
+# InsertDMLUsingParameter
+● 파라미터를 전달하는 방식으로 SQL 실행하기
+
+# OracleConnection_logging (혼자 해본거)
+● log를 보여주는 Logger 클래스 사용
+
+# OracleConnection_Test
+● try - catch - finally 사용
+
+# OracleConnection_WithResources
+● try - with - resources 사용
+
+# StudentInsertMenu
+● Insert 하는 메뉴 만들기 (혼자서 해본거 : 출력 메뉴 만들기)
