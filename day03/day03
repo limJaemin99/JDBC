@@ -1,0 +1,10 @@
+<Day 03>
+
+# _1_StudentDTO
+● tbl_student 의 DTO 작성
+
+# _2_StudentDAO
+● tbl_student 의 DAO 작성
+
+# _3_StudentDAOTest
+● tbl_student 의 DAO 를 main 메소드에서 실행
