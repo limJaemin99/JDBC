@@ -11,6 +11,7 @@ select * from TBL_CUSTOM;
 select * from TBL_PRODUCT;
 select * from TBL_BUY;
 
+drop table j_custom;
 
 select * from TBL_PRODUCT where pname like '%'||'동원'||'%';
 
@@ -18,11 +19,11 @@ SELECT * FROM TBL_BUY; -- 구매 정보 테이블
 SELECT * FROM TBL_BUY WHERE CUSTOMID = 'mina012';
 
 -- j_custom
-create table j_custom
+create table j_customer
 as								-- 이런식으로 만들면 pk , fk 는 복사하지 않음
 select * from tbl_custom;			-- 필요시 따로 제약조건을 추가해야함
 --------------------------
-select * from j_custom;
+select * from j_customer;
 --------------------------
 -- j_product
 create table j_product
@@ -46,7 +47,13 @@ alter table j_custom add constraint custom_pk primary key(customer_id);
 alter table j_product add constraint product_pk primary key(pcode);
 alter table j_buy add constraint buy_pk primary key(buy_seq);
 
+-- J_buy 테이블에 사용할 시퀀스
+create sequence jbuy_seq start with 8;
 
+-- 시퀀스는 DROP 하고 다시 만드는게 가장 정확함 (ALTER 사용 X)
+-- ALTER SEQUENCE jbuy_seq restart WITH 8;
 
+select jbuy_seq.nextval from dual;
 
+drop sequence jbuy_seq;
 
