@@ -35,3 +35,16 @@ from (select a.name, b.subject, b.jumsu
 from tbl_student a left join TBL_score b on a.stuno = b.stuno
 where subject = '국어');
 
+-- ResultSet 객체 rs러 참조가 됩니다.
+-- rs는 읽어올 행의 커서를 갖고 있습니다.
+-- 맨 처음에는 그 커서를 rs.next()메소드로 첫번째 행에 위치를 시켜야 합니다.
+
+
+-- 테이블 수정용 혼자 한거
+UPDATE TBL_STUDENT SET address = '서울시' WHERE stuno = '2023061';
+
+delete tbl_student where stuno = '2023069';
+
+
+
+
