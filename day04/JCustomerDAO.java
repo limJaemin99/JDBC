@@ -1,13 +1,9 @@
 package koreait.jdbc.day04;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 
 import koreait.jdbc.day02.OracleUtility;
@@ -29,7 +25,9 @@ public class JCustomerDAO {	// 구매와 관련된 CRUD 실행 SQL
 		if(rs.next()) {
 			temp = new JCustomerDTO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getDate(5));
 		} else {
-			System.out.println("존재하지 않는 아이디입니다.");
+			System.out.println("※ 존재하지 않는 아이디입니다 ※\n");
+			//프로그램 종료 메소드
+//			System.exit(0);
 		}
 		
 		ps.close();
