@@ -1,4 +1,4 @@
-package ExamPractice;
+package koreait.jdbc.day05;
 
 import java.sql.SQLException;
 import java.util.List;

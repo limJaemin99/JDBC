@@ -1,4 +1,4 @@
-package ExamPractice;
+package koreait.jdbc.day05;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
