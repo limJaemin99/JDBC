@@ -1,0 +1,41 @@
+<day 06>
+
+
+	우리가 만든 DAO 를 정상적으로 동작하는지 확인하려면,
+	데이터를 직접 주고 메소드를 호출해서 실행하는 main 을 만들어야 합니다.
+	main 메소드는 응용프로그램을 만들기 위해서 작성하는것으로 테스트용은 아닙니다.
+		
+	특정 메소드가 잘 실행되는지 검증(테스트)하는 것을 단위테스트(Unit Test)라고 합니다.
+	자바에서 기본적으로 사용하는 단위테스트 라이브러리로 JUnit 이 있습니다.
+	테스트 케이스는 테스트 메소드 또는 이것을 포함하는 클래스 입니다.
+	테스트 케이스는 test 폴더(그냥 Folder X , Source Folder O)에 작성하겠습니다.
+		▶ 빌드에 포함시키지 않습니다. src 폴더 : 프로덕션 코드(빌드에 포함되는 코드)
+	
+	우리는 하나의 DAO 를 완성하기 위해 main 까지 만들지 않고도 검증하는 목적으로 사용할 수 있습니다.
+
+* day04 의 JBuyDAO 를 예시로 작성할 예정
+--------------------------------------------------------
+# test - JBuyDAOTest.java
+	@DisplayName() - 테스트 내용 작성
+	@Test - 테스트 케이스로 실행
+	@Disabled - 테스트를 비활성화
+	//테스트 메소드 아닌것도 정의하여 호출할 수 있다.
+
+# SingletonClass
+	싱글톤 클래스 설명
+	● test - SingletonClassTest 에서 싱글톤 객체 비교
+	● day05 - MemberDAO 에 싱글톤 생성
+	● day05 - hrd_test 에서 dao 객체 생성 ▶ 싱글톤 객체로 변경
+	
+# HashFunctionTest
+	해시함수 설명
+	sql - tbl_custom,product,buy 에서 password 칼럼 만들고 '1234'의 해시코드 입력
+
+# JCustomerDAO2
+	해시함수를 비밀번호로 이용해 로그인하는 메소드를 새로 만든 클래스
+
+# LoginMain
+	JCustomerDAO2 클래스의 구현 클래스
+
+
+
