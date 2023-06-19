@@ -24,7 +24,7 @@
 # SingletonClass
 	싱글톤 클래스 설명
 	● test - SingletonClassTest 에서 싱글톤 객체 비교
-	● day05 - MemberDAO 에 싱글톤 생성
+	● day05 - MemberDAO , Check_SalesDAO 에 싱글톤 생성
 	● day05 - hrd_test 에서 dao 객체 생성 ▶ 싱글톤 객체로 변경
 	
 # HashFunctionTest
@@ -37,5 +37,7 @@
 # LoginMain
 	JCustomerDAO2 클래스의 구현 클래스
 
+# test_sql
+	선생님 코드 추가
 
 

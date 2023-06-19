@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class hrd_test {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -30,9 +32,15 @@ public class hrd_test {
 		String grade = null;
 		String city = null;
 		
-		MemberDAO mDao = new MemberDAO();
+		//싱글톤을 이용한 객체 가져오기 (day06, 06-19)---------
+		MemberDAO mDao = MemberDAO.getMemberDAO();
+		//----------------------------------------------
+		
 		MemberDTO mDto = new MemberDTO();
-		Check_SalesDAO cDao = new Check_SalesDAO();
+		
+		//싱글톤을 이용한 객체 가져오기 (day06, 06-19)------------------
+		Check_SalesDAO cDao = Check_SalesDAO.getCheck_SalesDAO();
+		//-------------------------------------------------------
 		
 		switch(menuSel1) {
 		case 1 :

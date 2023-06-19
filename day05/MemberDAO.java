@@ -7,12 +7,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.spi.DirStateFactory.Result;
 
 import koreait.jdbc.day02.OracleUtility;
 
+
+//DAO 에는 입력과 출력은 포함시키지 않습니다.
+//오직 어떤 형식의 데이터를 받아서 어떤 SQL 을 실행하여 어떤 값을 리턴할 것인가를 중점을 두고 정의하면 됩니다.
+//DTO 는 데이터를 저장하는 목적의 클래스, DAO 는 어떤 동작을 할 것인지를 정의한 메소드만 있습니다.
 public class MemberDAO {
 	
+	//싱글톤으로 만들어봅시다. (day06, 06-19) ------------------------------------
+	private static MemberDAO dao = new MemberDAO();
+	private MemberDAO() {}
+	//메소드 이름은 getInstance 외에 내용을 알 수 있는 이름으로 정하기
+	public static MemberDAO getMemberDAO() {
+		return dao;
+	}
+	
+		//메인메소드에서 싱글톤을 이용한 객체 가져오기 (day06, 06-19)---------
+			//MemberDAO mDao = MemberDAO.getMemberDAO();
+		//----------------------------------------------------------
+	//-----------------------------------------------------------------------
 	public void joinMember(MemberDTO mDto) {
 		
 		Connection conn = OracleUtility.getConnection();
