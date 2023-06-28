@@ -91,26 +91,26 @@ public class Kiosk {
 
 
 		///////// 메뉴 선택 패널
-		JPanel panel_Menu = new JPanel();
-		panel_Menu.setBounds(0, 0, 474, 691);
-		frame.getContentPane().add(panel_Menu);
-		panel_Menu.setLayout(null);
+		JPanel menuPanel = new JPanel();
+		menuPanel.setBounds(0, 0, 474, 691);
+		frame.getContentPane().add(menuPanel);
+		menuPanel.setLayout(null);
 
 		//////// 토핑 추가 패널
-		JPanel panel_Topping = new JPanel();
-		panel_Topping.setBackground(Color.ORANGE);
-		panel_Topping.setBounds(0, 0, 474, 477);
-		frame.getContentPane().add(panel_Topping);
-		panel_Topping.setLayout(null);
-		panel_Topping.setVisible(false);
+		JPanel toppingPanel = new JPanel();
+		toppingPanel.setBackground(Color.ORANGE);
+		toppingPanel.setBounds(0, 0, 474, 477);
+		frame.getContentPane().add(toppingPanel);
+		toppingPanel.setLayout(null);
+		toppingPanel.setVisible(false);
 
 		
 		///////// 장바구니 패널
-		JPanel panel_cart = new JPanel();
-		panel_cart.setBounds(0, 0, 474, 691);
-		frame.getContentPane().add(panel_cart);
-		panel_cart.setLayout(null);
-		panel_cart.setVisible(false);
+		JPanel cartPannel = new JPanel();
+		cartPannel.setBounds(0, 0, 474, 691);
+		frame.getContentPane().add(cartPannel);
+		cartPannel.setLayout(null);
+		cartPannel.setVisible(false);
 
 		
 		
@@ -121,63 +121,63 @@ public class Kiosk {
 		JButton btnDecide1 = new JButton("1");
 		btnDecide1.setIcon(new ImageIcon("./image/1.jpg"));
 		btnDecide1.setBounds(52, 58, 147, 95);
-		panel_Menu.add(btnDecide1);
+		menuPanel.add(btnDecide1);
 
 		JButton btnDecide2 = new JButton("2"); // \uD53C\uC7902
 		btnDecide2.setIcon(new ImageIcon("./image/2.jpg"));
 		btnDecide2.setBounds(253, 58, 147, 95);				
-		panel_Menu.add(btnDecide2);
+		menuPanel.add(btnDecide2);
 
 		JButton btnDecide3 = new JButton("3");
 		btnDecide3.setIcon(new ImageIcon("./image/3.jpg"));   
 		btnDecide3.setBounds(52, 221, 147, 95);
-		panel_Menu.add(btnDecide3);
+		menuPanel.add(btnDecide3);
 
 		JButton btnDecide4 = new JButton("4");
 		btnDecide4.setIcon(new ImageIcon("./image/4.jpg"));   
 		btnDecide4.setBounds(253, 221, 147, 95);
-		panel_Menu.add(btnDecide4);
+		menuPanel.add(btnDecide4);
 
 		JButton btnDecide5 = new JButton("5");
 		btnDecide5.setIcon(new ImageIcon("./image/5.jpg"));
 		btnDecide5.setBounds(52, 382, 147, 95);
-		panel_Menu.add(btnDecide5);
+		menuPanel.add(btnDecide5);
 
 		JButton btnDecide6 = new JButton("6");
 		btnDecide6.setIcon(new ImageIcon("./image/6.jpg"));
 		btnDecide6.setBounds(253, 382, 147, 95);
-		panel_Menu.add(btnDecide6);
+		menuPanel.add(btnDecide6);
 
 		// 메뉴 가격 표시 레이블 : 가격 정수값에 포맷 적용하는 메소드 priceLabel
 		JLabel lblpc1 = new JLabel(priceLabel(8000));
 		lblpc1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpc1.setBounds(52, 151, 108, 29);				//이미지 좌표(52, 58, 147, 95);	//레이블 위치 (52, 151, 108, 29);  x=그림, y=그림+93
-		panel_Menu.add(lblpc1);
+		menuPanel.add(lblpc1);
 
 		JLabel lblpcl2 = new JLabel(priceLabel(9000));
 		lblpcl2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpcl2.setBounds(253, 151, 108, 29);			//(253, 58, 147, 95);	
-		panel_Menu.add(lblpcl2);
+		menuPanel.add(lblpcl2);
 
 		JLabel lblpc33 = new JLabel(priceLabel(13000));
 		lblpc33.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpc33.setBounds(52, 315, 108, 29);			//(52, 221, 147, 95);
-		panel_Menu.add(lblpc33);
+		menuPanel.add(lblpc33);
 
 		JLabel lblpc4 = new JLabel(priceLabel(15000));
 		lblpc4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpc4.setBounds(253, 316, 108, 29);			//(253, 221, 147, 95);
-		panel_Menu.add(lblpc4);
+		menuPanel.add(lblpc4);
 
 		JLabel lblpc5 = new JLabel(priceLabel(20000));
 		lblpc5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpc5.setBounds(52, 477, 108, 29);
-		panel_Menu.add(lblpc5);
+		menuPanel.add(lblpc5);
 
 		JLabel lblpc6 = new JLabel(priceLabel(23000));
 		lblpc6.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpc6.setBounds(253, 478, 108, 29);
-		panel_Menu.add(lblpc6);
+		menuPanel.add(lblpc6);
 
 		// 주문 개수 증감하는 스피너
 		JSpinner spinner1 = new JSpinner();
@@ -191,7 +191,7 @@ public class Kiosk {
 					btnString1 = menu[0] + "\t\t" + priceLabel(cost[0]) + "\t" + (int) spinner1.getValue() + "\n\n";
 			}
 		});
-		panel_Menu.add(spinner1);
+		menuPanel.add(spinner1);
 
 		JSpinner spinner2 = new JSpinner();
 		spinner2.setModel(new SpinnerNumberModel(0, 0, 20, 1));
@@ -205,7 +205,7 @@ public class Kiosk {
 
 			}
 		});
-		panel_Menu.add(spinner2);
+		menuPanel.add(spinner2);
 
 		JSpinner spinner3 = new JSpinner();
 		spinner3.setModel(new SpinnerNumberModel(0, 0, 20, 1));
@@ -219,7 +219,7 @@ public class Kiosk {
 
 			}
 		});
-		panel_Menu.add(spinner3);
+		menuPanel.add(spinner3);
 
 		JSpinner spinner4 = new JSpinner();
 		spinner4.setModel(new SpinnerNumberModel(0, 0, 20, 1));
@@ -233,7 +233,7 @@ public class Kiosk {
 
 			}
 		});
-		panel_Menu.add(spinner4);
+		menuPanel.add(spinner4);
 
 		JSpinner spinner5 = new JSpinner();
 		spinner5.setModel(new SpinnerNumberModel(0, 0, 20, 1));
@@ -247,7 +247,7 @@ public class Kiosk {
 
 			}
 		});
-		panel_Menu.add(spinner5);
+		menuPanel.add(spinner5);
 
 		JSpinner spinner6 = new JSpinner();
 		spinner6.setModel(new SpinnerNumberModel(0, 0, 20, 1));
@@ -261,47 +261,47 @@ public class Kiosk {
 
 			}
 		});
-		panel_Menu.add(spinner6);
+		menuPanel.add(spinner6);
 
 		// 메뉴이름 레이블
 		JLabel lblpazzaName0 = new JLabel(menu[0]);
 		lblpazzaName0.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpazzaName0.setBounds(52, 189, 147, 22);		//(52, 58, 147, 95);    x=그림, y=그림+130
-		panel_Menu.add(lblpazzaName0);
+		menuPanel.add(lblpazzaName0);
 
 		JLabel lblpazzaName0_1 = new JLabel(menu[1]);
 		lblpazzaName0_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpazzaName0_1.setBounds(253, 189, 147, 22);   //(253, 58, 147, 95);	
-		panel_Menu.add(lblpazzaName0_1);
+		menuPanel.add(lblpazzaName0_1);
 
 		JLabel lblpazzaName0_2 = new JLabel(menu[2]);
 		lblpazzaName0_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpazzaName0_2.setBounds(52, 350, 147, 22);	//(52, 221, 147, 95);
-		panel_Menu.add(lblpazzaName0_2);
+		menuPanel.add(lblpazzaName0_2);
 
 		JLabel lblpazzaName0_3 = new JLabel(menu[3]);
 		lblpazzaName0_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpazzaName0_3.setBounds(253, 352, 147, 22);	//(253, 221, 147, 95);
-		panel_Menu.add(lblpazzaName0_3);
+		menuPanel.add(lblpazzaName0_3);
 
 		JLabel lblpazzaName0_4 = new JLabel(menu[4]);
 		lblpazzaName0_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpazzaName0_4.setBounds(52, 516, 147, 22);
-		panel_Menu.add(lblpazzaName0_4);
+		menuPanel.add(lblpazzaName0_4);
 
 		JLabel lblpazzaName0_5 = new JLabel(menu[5]);
 		lblpazzaName0_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblpazzaName0_5.setBounds(253, 517, 147, 22);
-		panel_Menu.add(lblpazzaName0_5);
+		menuPanel.add(lblpazzaName0_5);
 
-		// 메뉴 버튼 클랙했을 때 실행하는 액션 -> 토핑 추가 선택 패널 보이기
+		// 메뉴 버튼 클릭했을 때 실행하는 액션 -> 토핑 추가 선택 패널 보이기
 		btnDecide1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) { // 피자메뉴의 spinner 값이 0보다 커지는 경우, 해당 피자 버튼을 클릭 시 토핑 선택 화면이 출력되도록
 															// 설정.
 				if ((int) spinner1.getValue() > 0) { // 선택 수량이 1 이상일 때만
-					panel_Topping.setVisible(true);
-					panel_Menu.setVisible(false);
+					toppingPanel.setVisible(true);
+					menuPanel.setVisible(false);
 
 					btnString1 = menu[0] + "\t\t" + priceLabel(cost[0]) + "\t" + (int) spinner1.getValue() + "\n\n";
 
@@ -313,8 +313,8 @@ public class Kiosk {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if ((int) spinner2.getValue() > 0) {
-					panel_Topping.setVisible(true);
-					panel_Menu.setVisible(false);
+					toppingPanel.setVisible(true);
+					menuPanel.setVisible(false);
 
 					btnString2 = menu[1] + "\t\t" + priceLabel(cost[1]) + "\t" + (int) spinner2.getValue() + "\n\n";
 
@@ -326,8 +326,8 @@ public class Kiosk {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if ((int) spinner3.getValue() > 0) {
-					panel_Topping.setVisible(true);
-					panel_Menu.setVisible(false);
+					toppingPanel.setVisible(true);
+					menuPanel.setVisible(false);
 
 					btnString3 = menu[2] + "\t\t" + priceLabel(cost[2]) + "\t" + (int) spinner3.getValue() + "\n\n";
 
@@ -341,8 +341,8 @@ public class Kiosk {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println(spinner4.getValue());
 				if ((int) spinner4.getValue() > 0) {
-					panel_Topping.setVisible(true);
-					panel_Menu.setVisible(false);
+					toppingPanel.setVisible(true);
+					menuPanel.setVisible(false);
 
 					btnString4 = menu[3] + "\t\t" + priceLabel(cost[3]) + "\t" + (int) spinner4.getValue() + "\n\n";
 
@@ -355,8 +355,8 @@ public class Kiosk {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if ((int) spinner5.getValue() > 0) {
-					panel_Topping.setVisible(true);
-					panel_Menu.setVisible(false);
+					toppingPanel.setVisible(true);
+					menuPanel.setVisible(false);
 
 					btnString5 = menu[4] + "\t\t" + priceLabel(cost[4]) + "\t" + (int) spinner5.getValue() + "\n\n";
 
@@ -368,8 +368,8 @@ public class Kiosk {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if ((int) spinner6.getValue() > 0) {
-					panel_Topping.setVisible(true);
-					panel_Menu.setVisible(false);
+					toppingPanel.setVisible(true);
+					menuPanel.setVisible(false);
 
 					btnString6 = menu[5] + "\t\t" + priceLabel(cost[5]) + "\t" + (int) spinner6.getValue() + "\n\n";
 
@@ -377,16 +377,16 @@ public class Kiosk {
 			}
 		});
 
-////////토핑 추가 패널 컴포넌트들.
+////////토핑 추가 패널 컴포넌트들
 		JLabel lblAddCorn = new JLabel("치즈 추가");
 		lblAddCorn.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAddCorn.setBounds(73, 88, 125, 47);
-		panel_Topping.add(lblAddCorn);
+		toppingPanel.add(lblAddCorn);
 
 		JLabel lblAddPot = new JLabel("햄 추가");
 		lblAddPot.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAddPot.setBounds(73, 195, 125, 22);
-		panel_Topping.add(lblAddPot);
+		toppingPanel.add(lblAddPot);
 
 		JSpinner spinner_corn = new JSpinner();
 		spinner_corn.setModel(new SpinnerNumberModel(0,0,5,1));
@@ -416,7 +416,7 @@ public class Kiosk {
 			}
 
 		});
-		panel_Topping.add(spinner_corn);
+		toppingPanel.add(spinner_corn);
 
 		JSpinner spinner_pot = new JSpinner();
 		spinner_pot.setModel(new SpinnerNumberModel(0,0,5,1));
@@ -443,43 +443,43 @@ public class Kiosk {
 
 		});
 
-		panel_Topping.add(spinner_pot);
+		toppingPanel.add(spinner_pot);
 
 		JLabel lbltotal_cart = new JLabel("추가된 금액");
 		lbltotal_cart.setFont(new Font("굴림", Font.BOLD, 12));
 		lbltotal_cart.setBounds(114, 307, 84, 22);
-		panel_Topping.add(lbltotal_cart);
+		toppingPanel.add(lbltotal_cart);
 
 		JLabel lblNewLabel_3 = new JLabel("토핑 추가 옵션");
 		lblNewLabel_3.setFont(new Font("굴림", Font.PLAIN, 16));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(154, 10, 139, 47);
-		panel_Topping.add(lblNewLabel_3);
+		toppingPanel.add(lblNewLabel_3);
 
 		JLabel lblNewLabel_2 = new JLabel("700원");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(73, 220, 125, 15);
-		panel_Topping.add(lblNewLabel_2);
+		toppingPanel.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_2_1 = new JLabel("500원");
 		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1.setBounds(73, 121, 125, 15);
-		panel_Topping.add(lblNewLabel_2_1);
+		toppingPanel.add(lblNewLabel_2_1);
 
 		lbltotalT.setFont(new Font("굴림", Font.BOLD, 12));
 		lbltotalT.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbltotalT.setBounds(272, 307, 81, 28);
-		panel_Topping.add(lbltotalT);
+		toppingPanel.add(lbltotalT);
 
 		/////////// 토핑 추가 패널의 실행버튼 컴포넌트 - 선택
 		JButton btnChoose = new JButton("선택");
 		btnChoose.setBounds(284, 374, 113, 41);
-		panel_Topping.add(btnChoose);
+		toppingPanel.add(btnChoose);
 		btnChoose.addActionListener(new ActionListener() { // 선택 버튼 추가
 			@Override
 			public void actionPerformed(ActionEvent e) { // 토핑 선택화면에서 선택 버튼 누르면 다시 메인메뉴 화면으로 돌아가도록 설정.
-				panel_Topping.setVisible(false);
-				panel_Menu.setVisible(true);
+				toppingPanel.setVisible(false);
+				menuPanel.setVisible(true);
 				if ((int) spinner_corn.getValue() > 0) { // spinner 값이 증가/ 감소 할때마다 추가되는 금액이 출력되로록 설정.
 					c_count += (int) spinner_corn.getValue();
 					c_choose = side[0] + "\t\t" + priceLabel(side_cost[0]) + "\t" + c_count + "\n\n";
@@ -503,31 +503,31 @@ public class Kiosk {
 		JLabel lblNewLabel = new JLabel("총 금액");
 		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 24));
 		lblNewLabel.setBounds(90, 510, 148, 68);
-		panel_cart.add(lblNewLabel);
+		cartPannel.add(lblNewLabel);
 
 		lbltotalP.setFont(new Font("굴림", Font.BOLD, 20));
 		lbltotalP.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbltotalP.setBounds(224, 527, 142, 37);
-		panel_cart.add(lbltotalP);
+		cartPannel.add(lbltotalP);
 
 		JTextArea textArea = new JTextArea(TextArea.SCROLLBARS_VERTICAL_ONLY, 0);
 		textArea.setBounds(33, 29, 404, 429);
 		textArea.setEditable(false);
 		textArea.setText("제품명\t\t제품단가\t수량\n\n");
-		panel_cart.add(textArea);
+		cartPannel.add(textArea);
 		
 
 ///////////  주요 버튼 Action 		
 		/////////// 메뉴 선택 패널의 실행버튼 컴포넌트 - 장바구니
 		JButton btncart = new JButton("Cart");
 		btncart.setBounds(259, 552, 141, 68);
-		panel_Menu.add(btncart);
+		menuPanel.add(btncart);
 		btncart.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				panel_cart.setVisible(true);
-				panel_Menu.setVisible(false);
-				panel_Topping.setVisible(false);
+				cartPannel.setVisible(true);
+				menuPanel.setVisible(false);
+				toppingPanel.setVisible(false);
 
 				total_price = (cost[0] * (int) spinner1.getValue()) // Cart 버튼 클릭시, 장바구니 화면이 출력되고, 주문한 메뉴의 총 금액이 출력되도록
 																	// 설정.
@@ -546,6 +546,7 @@ public class Kiosk {
 		JButton btnClean = new JButton("뒤돌아가기"); // 뒤로가기버튼 클릭 시, 모든 값 초기화되도록 설정.
 		btnClean.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//btnString[] 을 arraycopy해서 초기화하기
 				btnString1 = "";
 				btnString2 = "";
 				btnString3 = "";
@@ -567,15 +568,15 @@ public class Kiosk {
 				count1 = 0;
 				count2 = 0;
 				textArea.setText("제품명\t\t제품단가\t수량\n\n");
-				panel_cart.setVisible(false);
-				panel_Menu.setVisible(true);
-				panel_cart.setVisible(false);
+				cartPannel.setVisible(false);
+				menuPanel.setVisible(true);
+				cartPannel.setVisible(false);
 
 			}
 
 		});
 		btnClean.setBounds(59, 600, 97, 23);
-		panel_cart.add(btnClean);
+		cartPannel.add(btnClean);
 
 		/////////// 장바구니 패널의 실행버튼 컴포넌트 - 결제하기
 		JButton btnconfirm = new JButton("결제하기");
@@ -611,9 +612,9 @@ public class Kiosk {
 					spinner5.setValue(0);
 					spinner6.setValue(0);
 					textArea.setText("제품명\t\t제품단가\t수량\n\n");
-					panel_cart.setVisible(false);
-					panel_Menu.setVisible(true);
-					panel_cart.setVisible(false);
+					cartPannel.setVisible(false);
+					menuPanel.setVisible(true);
+					cartPannel.setVisible(false);
 				} else { // 결제할 금액이 0원인경우, 결제하기 버튼이 클릭되지 않도록 설정.
 					JOptionPane.showMessageDialog(null, "결제할 내용이 없습니다.");
 				}
@@ -621,7 +622,7 @@ public class Kiosk {
 			}
 		});
 		btnconfirm.setBounds(299, 600, 97, 23); // btnClean.setBounds(59, 600, 97, 23); 뒤돌아가기
-		panel_cart.add(btnconfirm);
+		cartPannel.add(btnconfirm);
 	}
 
 	private String priceLabel(int num) { // 출력되는 숫자 3개마다 ,로 나뉘어 출력되도록 설정.
