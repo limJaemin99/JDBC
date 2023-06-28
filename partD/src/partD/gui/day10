@@ -1,0 +1,36 @@
+<day10>
+
+
+# D1GUiMain
+● JFrame 을 사용하여 GUI 구현하는 예시
+
+
+# D2JTableList_1
+● JScrollPane 을 사용하여 스크롤을 포함하는 GUI 구현
+	◎ //"이" 라고 검색시 "이" 와 동일한 단어만 출력
+
+# D2JTableList_2
+● JScrollPane 을 사용하여 스크롤을 포함하는 GUI 구현
+	◎ //"이" 라고 검색시 "이" 가 포함된 단어를 전부 출력
+	
+	## word
+	● D2 에서 사용할 word 타입 클래스
+	
+	
+# D3JTableListEx
+● 배운것을 예시로 koreait.jdbc.day05 패키지의 Check_SalesDAO/DTO 의 데이터를 활용하여 GUI 구현
+
+# Kiosk
+● 키오스크 GUI 예시
+
+	# padrD.rekiosk 패키지
+	● Kiosk 클래스를 반복문을 사용하여 가독성을 높이고, 각 메뉴별 클래스로 나눔
+
+	## image 폴더 1~6.jpg
+	● Kiosk 클래스에 사용될 jpg 파일이 들어있는 폴더
+	
+	## KioskTest
+	● 숙제
+
+# JFrameTest1 , JFrameTest2
+● 블로그 참조하여 혼자 연습
