@@ -1,0 +1,31 @@
+7/1/2022 19:6:25 - PFRO Error: \??\C:\Program Files (x86)\Microsoft\Edge, |delete operation|, 0xc0000101
+7/1/2022 19:6:25 - 0 Successful PFRO operations
+
+7/1/2022 19:13:8 - PFRO Error: \??\C:\Users\Administrator\AppData\Local\Microsoft\OneDrive\StandaloneUpdater\OneDriveSetup.exe, |delete operation|, 0xc000003a
+7/1/2022 19:13:8 - 1 Successful PFRO operations
+
+2/28/2023 19:15:32 - PFRO Error: \??\C:\Program Files\Google\Chrome, |delete operation|, 0xc0000101
+2/28/2023 19:15:32 - PFRO Error: \??\C:\Program Files\Google, |delete operation|, 0xc0000101
+2/28/2023 19:15:32 - 7 Successful PFRO operations
+
+4/19/2023 8:36:41 - PFRO Error: \??\C:\Program Files (x86)\Microsoft\EdgeWebView, |delete operation|, 0xc0000101
+4/19/2023 8:36:41 - 10 Successful PFRO operations
+
+5/2/2023 8:51:3 - PFRO Error: \??\C:\Windows\Temp\ef9aa898-5aa6-4bcb-9db7-51aba26300ed.tmp, |delete operation|, 0xc0000034
+5/2/2023 8:51:3 - 0 Successful PFRO operations
+
+5/30/2023 8:55:0 - PFRO Error: \??\C:\Windows\Temp\f47e4074-f020-4f5b-96b9-b5cc98783998.tmp, |delete operation|, 0xc0000034
+5/30/2023 8:55:1 - 480 Successful PFRO operations
+
+5/30/2023 15:59:17 - PFRO Error: \??\C:\Users\ADMINI~1\AppData\Local\Temp\chrome_drag7100_457131976\메모장.TXT, |delete operation|, 0xc0000034
+5/30/2023 15:59:17 - 1 Successful PFRO operations
+
+6/12/2023 8:25:2 - PFRO Error: \??\C:\Windows\Temp\8fcda6e4-3094-4933-9e6c-84d1a72018df.tmp, |delete operation|, 0xc0000034
+6/12/2023 8:25:2 - 481 Successful PFRO operations
+
+6/19/2023 8:26:47 - PFRO Error: \??\C:\Windows\Temp\f788a35b-f63a-42e8-b4cb-16e652305a9e.tmp, |delete operation|, 0xc0000034
+6/19/2023 8:26:48 - 480 Successful PFRO operations
+
+6/26/2023 15:47:9 - PFRO Error: \??\C:\Windows\Temp\32e02f8a-9a54-4be6-a9a8-d0731a627cec.tmp, |delete operation|, 0xc0000034
+6/26/2023 15:47:10 - 480 Successful PFRO operations
+
