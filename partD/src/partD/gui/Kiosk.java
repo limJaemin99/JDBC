@@ -546,7 +546,6 @@ public class Kiosk {
 		JButton btnClean = new JButton("뒤돌아가기"); // 뒤로가기버튼 클릭 시, 모든 값 초기화되도록 설정.
 		btnClean.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//btnString[] 을 arraycopy해서 초기화하기
 				btnString1 = "";
 				btnString2 = "";
 				btnString3 = "";

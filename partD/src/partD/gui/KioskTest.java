@@ -3,6 +3,7 @@ package partD.gui;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
@@ -11,14 +12,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
+import javax.swing.JTextArea;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import koreait.jdbc.day05.Check_SalesDAO;
 
 public class KioskTest {
 	/*
@@ -285,12 +287,174 @@ public class KioskTest {
 		cartLabel.setBounds(114, 307, 84, 22);
 		toppingPanel.add(cartLabel);
 		
+		JLabel addTpLabel = new JLabel("토핑 추가 옵션");
+		addTpLabel.setFont(new Font("굴림", Font.PLAIN, 16));
+		addTpLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		addTpLabel.setBounds(154, 10, 139, 47);
+		toppingPanel.add(addTpLabel);
 		
+		JLabel priceTpLabel_700 = new JLabel("700원");
+		priceTpLabel_700.setHorizontalAlignment(SwingConstants.CENTER);
+		priceTpLabel_700.setBounds(73, 220, 125, 15);
+		toppingPanel.add(priceTpLabel_700);
+
+		JLabel priceTpLabel_500 = new JLabel("500원");
+		priceTpLabel_500.setHorizontalAlignment(SwingConstants.CENTER);
+		priceTpLabel_500.setBounds(73, 121, 125, 15);
+		toppingPanel.add(priceTpLabel_500);
 		
-		
+		lbltotalT.setFont(new Font("굴림", Font.BOLD, 12));
+		lbltotalT.setHorizontalAlignment(SwingConstants.RIGHT);
+		lbltotalT.setBounds(272, 307, 81, 28);
+		toppingPanel.add(lbltotalT);
 		//////////////////////////////////////////
 		
+		/////토핑 추가 패널의 실행버튼 컴포넌트 - 선택
+		JButton choiceButton = new JButton("선택");
+		choiceButton.setBounds(284,374,113,41);
+		toppingPanel.add(choiceButton);
+		choiceButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				toppingPanel.setVisible(false);
+				menuPanel.setVisible(true);
+				if ((int)spinCheese.getValue() > 0) {
+					c_count += (int)spinCheese.getValue();
+					c_choose = side[0]+"\t\t"+priceLabel(side_cost[0])+"\t"+c_count+"\n\n";
+				}
+				
+				if ((int)spinHam.getValue() > 0) {
+					h_count += (int) spinHam.getValue();
+					h_choose = side[1]+"\t\t"+priceLabel(side_cost[1])+"\t"+h_count+"\n\n";
+				}
+				
+				side_total += (side_cost[0]*c_count);
+				side_total += (side_cost[1]*h_count);
+				spinCheese.setValue(0);
+				spinHam.setValue(0);
+			}//override end
+		});//addActionListener() end
+		//////////////////////////////////////////
 		
+		/////장바구니 패널의 컴포넌트들
+		JLabel totalPriceLabel = new JLabel("총 금액");
+		totalPriceLabel.setFont(new Font("굴림", Font.BOLD, 24));
+		totalPriceLabel.setBounds(90, 510, 148, 68);
+		cartPannel.add(totalPriceLabel);
+		
+		lbltotalP.setFont(new Font("굴림", Font.BOLD, 20));
+		lbltotalP.setHorizontalAlignment(SwingConstants.RIGHT);
+		lbltotalP.setBounds(224, 527, 142, 37);
+		cartPannel.add(lbltotalP);
+		
+		JTextArea textArea = new JTextArea(TextArea.SCROLLBARS_VERTICAL_ONLY, 0);
+		textArea.setBounds(33, 29, 404, 429);
+		textArea.setEditable(false);
+		textArea.setText("제품명\t\t제품단가\t수량\n\n");
+		cartPannel.add(textArea);
+		//////////////////////////////////////////
+		
+		/////주요 버튼 Action
+		JButton cartButton = new JButton("Cart");
+		cartButton.setBounds(259,552,141,68);
+		menuPanel.add(cartButton);
+		cartButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cartPannel.setVisible(true);
+				menuPanel.setVisible(false);
+				toppingPanel.setVisible(false);
+				
+				for (int i = 0; i < 6; i++) {
+					total_price = cost[i]*(int)spinners[i].getValue();
+					textArea.append(btnStrings[i]);
+				}
+				textArea.append(c_choose);
+				textArea.append(h_choose);
+				lbltotalP.setText(priceLabel(total_price));
+			}//override end
+		});//addActionListener() end
+		//////////////////////////////////////////
+		
+		/////장바구니 패널의 실행버튼 컴포넌트 - 돌아가기
+		JButton clearButton = new JButton("돌아가기");
+		clearButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//btnStrings[] 초기화
+				String[] newStrings = {"","","","","",""};
+				System.arraycopy(newStrings, 0, btnStrings, 0, btnStrings.length); 
+				
+				//choose,count 초기화
+				c_choose = "";	h_choose = "";
+				c_count=0;		h_count=0;
+				
+				//spinners[] 초기화
+				for (int i = 0; i < 6; i++) {
+					spinners[i].setValue(0);
+				}
+				
+				//total,count 초기화
+				total_price = 0;	side_total = 0;
+				count1 = 0;			count2 = 0;
+				
+				textArea.setText("제품명\t\t제품단가\t수량\n\n");
+				cartPannel.setVisible(false);
+				menuPanel.setVisible(true);
+				cartPannel.setVisible(false);
+			}//override end
+		});//addActionListener() end
+		
+		clearButton.setBounds(59,600,97,23);
+		cartPannel.add(clearButton);
+		//////////////////////////////////////////
+		
+		/////장바구니 패널의 실행버튼 컴포넌트 - 결제하기
+		JButton payButton = new JButton("결제하기");
+		payButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(total_price > 0) {
+					String[] placechoice = {"포장","매장"};
+					
+					JOptionPane.showInputDialog(null,"이대로 주문하시겠습니까?\n 포장여부를 체크해주세요.",
+							"결제완료",JOptionPane.QUESTION_MESSAGE,null,placechoice,"포장");
+					
+					JOptionPane.showMessageDialog(null,"결제 완료 되었습니다.\n"+"결제 금액은 "+total_price+" 원 입니다.");
+					//btnStrings[] 초기화
+					String[] newStrings = {"","","","","",""};
+					System.arraycopy(newStrings, 0, btnStrings, 0, btnStrings.length); 
+					
+					//choose,count 초기화
+					c_choose = "";	h_choose = "";
+					c_count=0;		h_count=0;
+					
+					//spinners[] 초기화
+					for (int i = 0; i < 6; i++) {
+						spinners[i].setValue(0);
+					}
+					
+					//total,count 초기화
+					total_price = 0;	side_total = 0;
+					count1 = 0;			count2 = 0;
+					
+					textArea.setText("제품명\t\t제품단가\t수량\n\n");
+					cartPannel.setVisible(false);
+					menuPanel.setVisible(true);
+					cartPannel.setVisible(false);
+				} else {
+					JOptionPane.showMessageDialog(null, "결제할 내용이 없습니다.");
+				}
+			}//override end
+		});//addActionListener() end
+		
+		payButton.setBounds(299,600,97,23);
+		cartPannel.add(payButton);
+		//////////////////////////////////////////
 		
 	}// initialize() end
 
