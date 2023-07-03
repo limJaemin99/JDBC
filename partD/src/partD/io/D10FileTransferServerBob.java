@@ -12,6 +12,8 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+//서버와 클라이언트 사이에서 소켓을 만들어 TCP 프로토콜 통신 (D9,D10)
+
 //클라이언트가 파일을 보내면 서버가 받습니다.
 	//▶ 파일을 정상적으로 받기 완료하면 클라이언트에게 '서버 파일 받기 완료' 메세지를 보냅니다.
 
